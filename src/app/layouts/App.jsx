@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
-import EventDashboard from '../../features/event/eventDashboard/eventDashboard'
+import { Container } from 'semantic-ui-react'
+import EventDashboard from '../../features/event/eventDashboard/eventDashboard';
+import NavBar from '../../features/nav/NavBar/NavBar'
 
 class App extends Component {
   render() {
     return (
-      <div class="app">
-        <h1>Menu</h1>
-          <EventDashboard></EventDashboard>
+      <div>
+          <NavBar />
+          <Container className="main">
+            <EventDashboard></EventDashboard>
+          </Container>
       </div>
     );
   }
