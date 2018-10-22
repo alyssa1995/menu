@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { Grid, Button } from 'semantic-ui-react'
-import EventList from '../eventList/EventList'
-import EventForm from '../EventForm/EventForm'
+import React, { Component } from 'react';
+import { Grid, Button } from 'semantic-ui-react';
+import cuid from 'cuid';
+import EventList from '../eventList/EventList';
+import EventForm from '../EventForm/EventForm';
 
 const eventsDashboard = [
   {
@@ -52,42 +53,53 @@ const eventsDashboard = [
       }
     ]
   }
-]
+];
 
 class eventDashboard extends Component {
   state = {
-      events: eventsDashboard, 
-      isOpen: false
-    };
+    events: eventsDashboard,
+    isOpen: false
+  };
 
   handleFormOpen = () => {
     this.setState({
       isOpen: true
-    })
+    });
   };
 
   handleCancel = () => {
     this.setState({
       isOpen: false
-    })
+    });
   };
-  
+
+  handleCreateEvent = (newEvent) => {
+    newEvent.id = cuid();
+    newEvent.hostPhotoURL = '/assets/user.png';
+    const updatedEvents = [...this.state.events, newEvent];
+    this.setState({
+      events: updatedEvents,
+      isOpen: false
+    })
+  }
+
   render() {
     return (
-      <div>
-        <Grid>
-            <Grid.Column width={10}>
-                <EventList events={this.state.events} />
-            </Grid.Column>
-            <Grid.Column width={6}>
-              <Button onClick={this.handleFormOpen} positive content="Create Event"/>
-              {this.state.isOpen && 
-                <EventForm handleCancel={this.handleCancel}/>}
-            </Grid.Column>
-        </Grid>
-      </div>
-    )
+      <Grid>
+        <Grid.Column width={10}>
+          <EventList events={this.state.events} />
+        </Grid.Column>
+        <Grid.Column width={6}>
+          <Button
+            onClick={this.handleFormOpen}
+            positive
+            content="Create Event"
+          />
+          {this.state.isOpen && <EventForm handleCancel={this.handleCancel} createEvent={this.handleCreateEvent} />}
+        </Grid.Column>
+      </Grid>
+    );
   }
 }
 
-export default eventDashboard
+export default eventDashboard;

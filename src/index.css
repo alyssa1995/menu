@@ -1,5 +1,5 @@
 body {
-  background-color: #000000 !important;
+  background-color: rgb(234, 234, 234) !important;
 }
 
 /*timepicker style*/
@@ -80,22 +80,6 @@ body {
 .main.segment {
   margin-top: 7em;
 }
-.ui.menu {
-  height: 100vh;
-}
-.ui.menu .dropdown.item .menu {
-  background-color: #1b1c1d !important;
-}
-.ui.menu .ui.dropdown .menu>.item {
-  color: #ffffff !important; 
-}
-
-
-
-.ui.menu .ui.dropdown .menu>.item:hover {
-  color: #3c9cd7 !important;
-  background-color: #2d2e2f !important;
-}
 
 .ui.center.aligned.segment.attendance-preview {
   background-color: #f5f5f5;
@@ -120,4 +104,3 @@ body {
   padding-bottom: 0 !important;
   padding-left: 2em !important;
 }
-
