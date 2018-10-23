@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Menu, Button, Container } from 'semantic-ui-react'
-import { NavLink, Link, withRouter } from 'react-router-dom'
-import SignedOutMenu from '../Menus/signedOutMenu'
-import SignedInMenu from '../Menus/signedInMenu';
+import { Menu, Dropdown, Item, Grid, Image} from 'semantic-ui-react'
+// import { NavLink, Link, withRouter } from 'react-router-dom'
+// import SignedOutMenu from '../Menus/signedOutMenu'
+// import SignedInMenu from '../Menus/signedInMenu';
 
-// import Greeting from './greeting'
+import Greeting from './greeting'
 
-/*
+
 const userName = {
   username: 'Alyssa'
 }
@@ -79,9 +79,9 @@ class NavBar extends Component {
 
 
 export default NavBar
-*/
 
 
+/*
 class NavBar extends Component {
   state = {
     authenticated: false
@@ -131,4 +131,4 @@ class NavBar extends Component {
               }
             }
 
-export default withRouter(NavBar); 
+export default withRouter(NavBar); */
