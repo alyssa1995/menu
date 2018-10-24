@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Image, Grid } from 'semantic-ui-react'
-import { GoogleLogin } from 'react-google-login'
 import '../login/UserLogin.css'
 
-class UserLogin extends Component {
-  render() {
-    const responseGoogle = (response) => {
-      console.log(response);
-    }
-    
+const UserLogin = ({history}) => {
+  
     return (
+      <div>
   <Container> 
     <Grid>
       <Grid.Row>
@@ -18,16 +14,13 @@ class UserLogin extends Component {
         </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
-            <GoogleLogin
-        clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-        />
+        <div onClick={() => history.push('/DashBoard')} className="ui huge white inverted button">Login with Google        
+        </div>
         </Grid.Row>
     </Grid> 
   </Container>
-    );
-  }
+  </div>
+    )
 }
 
 export default UserLogin
