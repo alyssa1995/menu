@@ -23,8 +23,9 @@ body {
     border: none !important;
 }
 
-button {
-    margin-top: 40%;
+.ui.button {
+    margin-top: 28%;
     background-color: #ffffff !important;
     color: #7f7f7f !important;
+    font-size: 1.2em !important;
 }

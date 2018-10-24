@@ -14,7 +14,7 @@ const UserLogin = ({history}) => {
         </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
-        <div onClick={() => history.push('/DashBoard')} className="ui huge white inverted button">Login with Google        
+        <div onClick={() => history.push('/DashBoard')} className="ui huge white button">Login with Google        
         </div>
         </Grid.Row>
     </Grid> 

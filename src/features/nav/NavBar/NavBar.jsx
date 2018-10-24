@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Dropdown, Item, Grid, Image} from 'semantic-ui-react'
+import '../NavBar/NavBar.css'
 // import { NavLink, Link, withRouter } from 'react-router-dom'
 // import SignedOutMenu from '../Menus/signedOutMenu'
 // import SignedInMenu from '../Menus/signedInMenu';
@@ -29,22 +30,21 @@ class NavBar extends Component {
         <Item>
           <Image size="tiny" centered src="https://s3.amazonaws.com/whatif-assets-cdn/images/what_ifcolonizer.png"></Image>
         </Item>
-        <Grid columns={2} divided>
-          <Grid.Row>
-              <Grid.Column>
-                <Item>
-                  <Image size="tiny" circular src="https://s3.amazonaws.com/whatif-assets-cdn/images/linkedin-mobile.png"/>
-                </Item>
+        <Grid columns={2}>
+        <Grid.Row centered>
+              <Grid.Column className="image">
+                
+                  <Image size="medium" circular src="https://s3.amazonaws.com/whatif-assets-cdn/images/linkedin-mobile.png"/>
+              
               </Grid.Column>
+              </Grid.Row>
+              <Grid.Row centered>
               <Grid.Column>
-                <Item>
-                  <Item.Description>
+                  <p>
                     <Greeting></Greeting> {userName.username}
-                  </Item.Description>  
-                </Item>
+                  </p>  
               </Grid.Column>
-
-            </Grid.Row>
+              </Grid.Row>
         </Grid>
         <Dropdown item text='Sites'>
         <Dropdown.Menu name='sites' active={activeItem === 'sites'} onClick={this.handleItemClick} >

@@ -21,8 +21,8 @@ class Greeting extends Component {
     const {hour} = this.state;
     return (
       <div className="App">
-        <span>{hour < 12 ? 'Good Morning' 
-        : hour >12 && hour <= 17 ? 'Good Afternoon' : 'Good Evening'}</span>
+        <span>{hour < 12 ? 'Good Morning, ' 
+        : hour >12 && hour <= 17 ? 'Good Afternoon, ' : 'Good Evening, '}</span>
       </div>
     );
   }
